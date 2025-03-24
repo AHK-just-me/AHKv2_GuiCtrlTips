@@ -1,6 +1,6 @@
 ﻿#Requires AutoHotkey v2.0
 ; ======================================================================================================================
-; Release date: 2023-05-28
+; Release date: 2025-03-24
 ; ======================================================================================================================
 ; Add tooltips to your Gui controls.
 ; Tooltips are managed per Gui, so you first have to create a new instance of the class for the Gui, e.g.:
@@ -76,7 +76,7 @@ Class GuiCtrlTips {
    ; -------------------------------------------------------------------------------------------------------------------
    __Delete() {
       If This.HasProp("HTIP")
-         DllCall("DestroyWindow", "Ptr", This.HTIP)
+         Try DllCall("DestroyWindow", "Ptr", This.HTIP) ; 2025-03-24
    }
    ; -------------------------------------------------------------------------------------------------------------------
    ; https://learn.microsoft.com/en-us/windows/win32/controls/ttm-activate
